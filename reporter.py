@@ -15,6 +15,7 @@ class Reporter(object):
  
     def print_report(self):
         print(self.name)
-        print('%d recursive calls' % self.cnt)
+        print('llamadas recursivas realizadas en total son: %d' % self.cnt)
         print(self.cliques)
-        print()
+
+
