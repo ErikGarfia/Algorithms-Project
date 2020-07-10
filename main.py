@@ -2,14 +2,10 @@ import tkinter as ttk
 from tkinter import *
 from tkinter import filedialog
 from functools import partial
-import matplotlib.pyplot as plt
-import networkx as nx
 import os
 import Pmw
 import sys
 from maximal_clique import *
-
-
 
 class Aplicacion():
 
@@ -42,21 +38,6 @@ class Aplicacion():
         print(NEIGHBORS)
         print(type(NEIGHBORS))
         maximal_clique(self.NODES, self.NEIGHBORS)
-        #Para poder graficarlo, una forma sencilla es transforma la lista en un 
-        #diccionario para poder trabajarlo
-        #DICT lo transforma en diccionario
-        #ZIP toma dos listas, la primera es la longitud y la segunda son los valores de la lista
-        dictionary = dict(zip(range(len(NEIGHBORS)),NEIGHBORS))
-        print(dictionary)
-        print(type(dictionary))
-        valores = dictionary.values()
-        print(valores)
-        claves = dictionary.keys()
-        print(claves) 
-        g = nx.Graph(dictionary)
-        nx.draw(g)
-        plt.savefig("GraficoMaximoClique.png")
-        plt.show()   
 # -  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
     def datos(self):
         print(self.NEIGHBORS)
