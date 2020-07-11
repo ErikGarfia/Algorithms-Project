@@ -1,7 +1,9 @@
 def IK(clique, candidates, excluded, reporter,NEIGHBORS):
+    #algoritmo principal, determina si el nodo pertenece al maximo clique o no
     '''Bron–Kerbosch algorithm with pivot'''
     reporter.inc_count()
-    if not candidates:
+    if not candidates: 
+            #si ya no hay más nodos para registrar o que pertenezcan al maximo clique
             reporter.record(clique)
             return
     else:
