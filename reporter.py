@@ -1,26 +1,22 @@
-import tkinter as tk
-
 class Reporter(object):
+#Constructor de la clase
     def __init__(self, name):
-        #variable que se inicializan al ejecutar el programa
         self.name = name
         self.cnt = 0
         self.cliques = []
         self.tam = 0
-    #este solo es el contador que va a manejar el tamaño de los nodos del txt
+ #Cuenta el nùmero de recursiones totales
     def inc_count(self):
         self.cnt += 1
- 
+ #Guarda el màximo clique
     def record(self, clique):
-        #registra si el nodo pertenece al maximo clique o no
         if(len(clique) > self.tam):
             self.cliques = clique
             self.tam = len(clique)
- 
-    def print_report(self):
-        #imprime las veces que recorre los nodos
+ #Imprime los datos
+    def print_report(self,datos):
+        datos.settext(self.cliques)
         print(self.name)
-        print('las llamadas realizadas en total son: %d' % self.cnt)
+        print('llamadas recursivas realizadas en total son: %d' % self.cnt)
         print(self.cliques)
-
 
