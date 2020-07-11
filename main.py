@@ -38,7 +38,9 @@ class Aplicacion():
     def cargar_archivo(self, text):
         #obtenemos la variable inicializada al inicio, y trabajamos con el formato introducido del txt
         NEIGHBORS = self.NEIGHBORS
+        #obtenemos los datos del txt
         NEIGHBORS = text.get().strip()
+        #operaciones para quitar los caracteres especiales a los datos y poder convertirlo a enteros
         NEIGHBORS = NEIGHBORS.split('\n')
         for i in range(len(NEIGHBORS)):
             NEIGHBORS[i] = "".join(NEIGHBORS[i])
@@ -49,14 +51,13 @@ class Aplicacion():
                 NEIGHBORS[i][c] = int(NEIGHBORS[i][c])
         self.NEIGHBORS = NEIGHBORS
         self.NODES = set(range(len(NEIGHBORS)))
-        print(NEIGHBORS)
-        print(type(NEIGHBORS))
         #mandamos a llamar al algoritmo que realizara el trabajo de buscar el maximo clique
-        maximal_clique(self.NODES, self.NEIGHBORS)
+        maximal_clique(self.NODES, self.NEIGHBORS,datos)
 
     #-  -   -   -   FUNCION BORRAR-  -   -   -   
-    def borrar_texto(self,text):
+    def borrar_texto(self,text,datos):
         text.clear()
+        datos.clear()
 
 
 #!Este ese el main, mandamos llamar a la funcion APLICACION
@@ -79,11 +80,24 @@ if __name__ == '__main__':
     text_height=4,
     text_wrap='none',
     )
-#-  -   -   -   -   -   -  SECCION DE LOS BOTONES-  -   -   -   -   -   -   -   -   
+# Esta es la parte donde aparece el clique màximo
+    datos = Pmw.ScrolledText(
+    borderframe=0,
+    vscrollmode='dynamic',
+    hscrollmode='dynamic',
+    labelpos='n',
+    label_text='cliqueMaximo',
+    text_width=20,
+    text_height=4,
+    text_wrap='none',
+    )
+    datos.place(x=18, y=120)
     text.place(x=18, y=20)
+#-  -   -   -   -   -   -  SECCION DE LOS BOTONES-  -   -   -   -   -   -   -   -  
+#Partial nos permite mandar argumentos a las acciones de los botones  
     abrir = partial(mi_app.abrir_archivo, text)
     cargar = partial(mi_app.cargar_archivo, text)
-    borrar = partial(mi_app.borrar_texto, text)
+    borrar = partial(mi_app.borrar_texto, text,datos)
     #-  -   -   -   BOTON CARGAR ARCHIVO-  -   -   -   
     ttk.Button(raiz,
     text='Cargar Archivo',
@@ -105,7 +119,7 @@ if __name__ == '__main__':
     fg="white",
     activeforeground="#3F8BBA",
     relief=FLAT,
-    command=cargar).place(x=240, y=119)
+    command=cargar).place(x=240, y=69)
     #-  -   -   -   BOTON BORRAR-  -   -   -   
     ttk.Button(raiz,
     text='Borrar datos',
@@ -116,7 +130,7 @@ if __name__ == '__main__':
     activeforeground="#3F8BBA",
     fg="white",
     relief=FLAT,
-    command=borrar).place(x=240, y=69)
+    command=borrar).place(x=240, y=119)
     #-  -   -   -   BOTON SALIR  -   -   -   
     ttk.Button(raiz,
     text='Salir',
