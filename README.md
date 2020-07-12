@@ -35,7 +35,7 @@ En mi caso la ruta es la siguiente: **/home/user/proyectoAlgoritmos/Algorithms-P
 
 >Ahora cargamos el archivo **numeros.txt** presionando el botón **Cargar Archivo**
 <p align="center">
-  <img src="capturas/cargar.png" width="350" alt="accessibility text">
+  <img src="capturas/iniciointerfaz.png" width="350" alt="accessibility text">
 </p>
 
 >Y nos aparecera una ventana como la siguiente, en la que nos abrirá de manera inmediata la ruta de la carpeta donde se encuentra el archivo txt
@@ -43,7 +43,24 @@ En mi caso la ruta es la siguiente: **/home/user/proyectoAlgoritmos/Algorithms-P
   <img src="capturas/cargarg.png" width="350" alt="accessibility text">
 </p>
 
->Abrimos el archivo y nos aparecera automáticamente los valores del txt en el cuadro blanco de la interfaz
+>Abrimos el archivo y nos aparecera automáticamente los valores del txt en el cuadro blanco de la interfaz. Podemos observar que en la parte inferior se encuentra otro cuadro de texto llamado **cliqueMaximo**, en esta parte se desplegarán los nodos que contenga el máximo clique.
 <p align="center">
   <img src="capturas/cargarg2.png" width="350" alt="accessibility text">
+</p>
+
+>Seleccionamos el botón de **Enviar** para cargar el archivo txt y obtener como resultado un grafo como el siguiente
+<p align="center">
+  <img src="capturas/gg.png" width="350" alt="accessibility text">
+</p>
+
+>En la imagen anterior, se despliega el grafo construido a partir del archivo txt que se cargo, en **rojo** podemos observar los nodos que forman parte del clique máximo, y en **azul** los nodos que no lo son.
+
+>Al observar ambas pantallas, podemos ver que en el cuadro de texto que anteriormente estaba vacío, ahora aparecen los nodos que forman parte del clique máximo.
+<p align="center">
+  <img src="capturas/ambas.png" width="350" alt="accessibility text">
+</p>
+
+>De igual manera, podemos observar en nuestra terminal nos aparece el total de llamadas recursivas realizadas y los nodos que pertecen al máximo clique.
+<p align="center">
+  <img src="capturas/final.png" width="350" alt="accessibility text">
 </p>
