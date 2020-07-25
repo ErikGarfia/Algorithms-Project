@@ -1,4 +1,4 @@
-# Máximo Clique
+# Máximo Clique con pivote
 Autores:
 ### Garfia Acevedo Erik
 ### Medero Luján Alejandro
